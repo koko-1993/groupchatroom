@@ -103,7 +103,7 @@ export function Chatroom(room,username){
             }catch(error){
                 console.error("Error deleting message : ", error);
             }
-        },1000);
+        },15000);
 
     }
 
