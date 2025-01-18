@@ -15,7 +15,6 @@ export function Authorize(){
 
         const defaultprofileimg = "https://static.thenounproject.com/png/65476-200.png";
 
-
         try{
 
             const userCredential = await createUserWithEmailAndPassword(auth,email,password);
@@ -27,6 +26,10 @@ export function Authorize(){
                 displayName: fullname, 
                 photoURL: defaultprofileimg
               }).then(() => {
+
+                // set name to localstorage 
+                setLocalName(fullname);
+
                 // Redirect to index.html
                 window.location.href = "../index.html";
               });
